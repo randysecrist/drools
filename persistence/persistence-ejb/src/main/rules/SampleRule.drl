@@ -1,0 +1,17 @@
+package org.zoikks.drools
+
+#list any import classes here.
+
+#declare any global variables here
+
+rule "Sample Rule"
+	// Include attributes such as "salience" here...
+	
+	
+	when
+		eval(true)
+	then 
+		#actions
+		System.out.println("Sample Rule run successfully.");
+		
+end

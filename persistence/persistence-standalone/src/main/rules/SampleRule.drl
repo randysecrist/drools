@@ -1,0 +1,23 @@
+#created on: Mar 12, 2012
+package org.ihc.hwcir.drools
+
+#list any import classes here.
+
+
+
+#declare any global variables here
+
+
+rule "Sample Rule"
+	// Include attributes such as "salience" here...
+	
+	
+	when
+		eval(true)
+		$s : String()
+	then 
+		#actions
+		System.out.println("Sample Rule run successfully.");
+		System.out.println($s);
+		
+end
