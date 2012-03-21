@@ -1,4 +1,6 @@
 target
 .DS_Store
-btm1.log
-btm2.log
+.classpath
+.project
+btm1.tlog
+btm2.tlog
