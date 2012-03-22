@@ -21,7 +21,10 @@ public class RiakQuery implements Query {
     public Query setFirstResult(int i) { logger.info("called"); return null; }
     public Query setHint(String i, Object o) { logger.info("called"); return null; }
     public Query setMaxResults(int i) { logger.info("called"); return null; }
-    public Query setParameter(String s, Object o) { logger.info("called"); return null; }
+    public Query setParameter(String s, Object o) {
+    	logger.info("called - " + s + "::" + o.toString());
+    	return null;
+    }
     public Query setParameter(int i, Object v) { logger.info("called"); return null; }
     public Query setParameter(String s, Date d, TemporalType t) { logger.info("called"); return null; }
     public Query setParameter(String s, Calendar c, TemporalType t) { logger.info("called"); return null; }

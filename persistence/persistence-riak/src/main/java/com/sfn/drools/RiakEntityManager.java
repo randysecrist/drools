@@ -27,7 +27,10 @@ public class RiakEntityManager implements EntityManager {
     public Query createNativeQuery(String x, String y) { logger.info("called"); return new RiakQuery(); }
     public Query createNativeQuery(String x, Class klass) { logger.info("called"); return new RiakQuery(); }
 
-    public Query createNamedQuery(String x) { logger.info("called"); return new RiakQuery(); }
+    public Query createNamedQuery(String x) {
+    	logger.info("called - " + x);
+    	return new RiakQuery();
+    }
     public Query createQuery(String x) { logger.info("called"); return new RiakQuery(); }
 
     public boolean contains(Object o) { logger.info("called"); return false; }
@@ -40,8 +43,14 @@ public class RiakEntityManager implements EntityManager {
     public void flush() { logger.info("called"); }
 
     public <T> T getReference(Class<T> klass, Object o) { logger.info("called"); return null; }
-    public <T> T find(Class<T> klass) { logger.info("called"); return null; }
-    public <T> T find(Class<T> klass, Object o) { logger.info("called"); return null; }
+    public <T> T find(Class<T> klass) { return this.find(klass, null); }
+    public <T> T find(Class<T> klass, Object o) {
+    	if (klass != null && o != null)
+    		logger.info("called - " + klass.getName() + "::" + o.toString());
+    	else if (klass != null)
+    		logger.info("called - " + klass.getName());
+    	return null;
+    }
     public <T> T merge(T t) { logger.info("called"); return null; }
 
     public void remove(Object o) { logger.info("called"); }
